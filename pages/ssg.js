@@ -1,8 +1,9 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Link from 'next/link'
+import { useEffect, useState } from 'react';
 
-export async function getServerSideProps(){
+export async function getStaticProps(){
   console.log("서버에서 데이터 보내는중..")
   return {
     props:{time: new Date().toISOString()}
@@ -10,8 +11,8 @@ export async function getServerSideProps(){
 }
 
 
-
-export default function Home({time}) {
+export default function SSG({time}) {
+   
   return (
     <div className={styles.container}>
       <Head>
@@ -23,9 +24,6 @@ export default function Home({time}) {
         <h1 className={styles.title}>
         {time}
         </h1>
-        <h1><Link href="/csr"><p>CSR로</p></Link></h1>
-        <h1><Link href="/ssg"><p>SSG로</p></Link></h1>
-        <h1><Link href="/isr"><p>ISR로</p></Link></h1>
       </main>
 
       <footer>

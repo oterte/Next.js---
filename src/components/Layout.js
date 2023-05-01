@@ -1,11 +1,9 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
-
+import Head from 'next/head'
+import styles from '/styles/Home.module.css'
 
 // 페이지가 아닌 컴포넌트이기 때문에 SSR를 할 수 없다.
 
-
-export default function Layout({children}) {
+export default function Layout({ children }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -13,9 +11,7 @@ export default function Layout({children}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        {children}
-      </main>
+      <main>{children}</main>
 
       <footer>
         <a
